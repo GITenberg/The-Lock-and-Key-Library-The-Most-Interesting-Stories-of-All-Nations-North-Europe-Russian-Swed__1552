@@ -1,4 +1,5 @@
 _repo: The-Lock-and-Key-Library-The-Most-Interesting-Stories-of-All-Nations-North-Europe-Russian-Swed__1552
+_version: 0.1.0
 contributor:
   contributors:
   - agent_name: Ingemann, Bernhard Severin
@@ -17,7 +18,7 @@ contributor:
     - Tchekhov, Anton
     - Чехов, Антон Павлович
     birthdate: 1860
-    deathdate: &id001 1904
+    deathdate: 1904
     gutenberg_agent_id: '708'
     url: http://www.gutenberg.org/2009/agents/708
     wikipedia: http://en.wikipedia.org/wiki/Anton_Chekhov
@@ -26,7 +27,7 @@ contributor:
     - Jokai, Mor
     - Jokai, Maurus
     birthdate: 1825
-    deathdate: *id001
+    deathdate: 1904
     gutenberg_agent_id: '5845'
     url: http://www.gutenberg.org/2009/agents/5845
     wikipedia: http://en.wikipedia.org/wiki/M%C3%B3r_J%C3%B3kai
@@ -47,7 +48,7 @@ contributor:
     - Zhelikhovskaia, Vera Petrovna
     - Jelihovsky, Vera Petrovna
     - Желиховская, Вера Петровна
-    birthdate: &id002 1835
+    birthdate: 1835
     deathdate: 1896
     gutenberg_agent_id: '5837'
     url: http://www.gutenberg.org/2009/agents/5837
@@ -55,7 +56,7 @@ contributor:
     aliases:
     - Bergsoe, Jorgen Vilhelm
     - Bergsøe, Jørgen Vilhelm
-    birthdate: *id002
+    birthdate: 1835
     deathdate: 1911
     gutenberg_agent_id: '5839'
     url: http://www.gutenberg.org/2009/agents/5839
