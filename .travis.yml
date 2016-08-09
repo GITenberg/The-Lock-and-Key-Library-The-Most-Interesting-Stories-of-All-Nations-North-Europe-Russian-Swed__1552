@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: TXR9vZRlPgMKDJ6s4sIKNBzxdV9sXh1k2IKdcAxcRpshN2VECBw+M/bFheUCWkFrtLtxeqXTzjMMExHdPJx3L7eMkwBma2yGpXVFrp/4jg5tVI/wVx/i3Vjbq9sdsN91F7lG3JaaiSR5tDeMSH0/XfyuQ/Q6nByrw08twiuTglWT56ZQB04GyO1nfc0T6pngtpSqj83J+AA7BpuOmeXl4GCurKCDIDMBarT9n5YhP2Y+vL+L4EB053hykT060W7rK9PODFldbeHrhvvYPDmKqEe2l4yfl/3WERFGppQhPq8HH0N20bWsGqyMKx0dhr6EBVtgxIT+hGpEE/tPDqGrzuq1fSpFQlz9zOobc8cOzpjg+wGFcWquJg9Fao/FofB1AIaluAvicTgAbLBrno6tAc/sGRDVvt9BCtAi8G2mPk9ZfIosW1sTBsySz8JIZbGGSRadw6rfw2LRFrKxe80dCrP51fp1tHkPbFEFBUlW0DoPkAsRR8XWRFm07zjClC8LJ2HLG0pO2MP/IpICN8K90IcZsdfxZrUDp0Tv8Nt16jXpPJgTBrZEbmMx4wLxxJMfFYhYSzlPkb/cQar/rUC9u0D/RXqHdUi/PPgVmn0F6V6gbF89c14a5EUHG0Yo3knBu5D+jDTg/Pn0hQ7DPJFG0woGlFPlAAMzd9EiQ76to/0=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/The-Lock-and-Key-Library-The-Most-Interesting-Stories-of-All-Nations-North-Europe-Russian-Swed__1552
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
