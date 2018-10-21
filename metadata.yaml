@@ -1,5 +1,5 @@
 _repo: The-Lock-and-Key-Library-The-Most-Interesting-Stories-of-All-Nations-North-Europe-Russian-Swed__1552
-_version: 0.2.0
+_version: 0.2.1
 contributor:
   contributors:
   - agent_name: Ingemann, Bernhard Severin
@@ -135,6 +135,7 @@ subjects:
 - !lcsh 'Detective and mystery stories'
 - !lcsh 'Fiction'
 - !lcsh 'Short stories'
+- GITenberg
 tableOfContents: "ALEXANDER SERGEIEVITCH PUSHKIN\r\nThe Queen of Spades\r\nVERA JELIHOVSKY\r\
   \nThe General's Will\r\nFEODOR MIKHAILOVITCH DOSTOYEVSKY\r\nCrime and Punishment\r\
   \nANTON CHEKHOFF\r\nThe Safety Match\r\nVSEVOLOD VLADIMIROVITCH KRESTOVSKI\r\nKnights\
